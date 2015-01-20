@@ -27,8 +27,14 @@ Also add this to your pom.xml
 
 http://blog.cloudera.com/blog/2014/04/how-to-run-a-simple-apache-spark-app-in-cdh-5/
 
+Make sure you edit <groupId>org.scalatest</groupId> to have the following:
+<artifactId>scalatest_2.10</artifactId>
+<version>2.2.3</version>
+
 $ mvn package
 
-/usr/local/spark-bin-hadoop (your spark directory)/bin
+/usr/local/spark (your spark directory)/bin
 
 $ ./spark-submit --class App --master local ~/Documents/projects/scala-helloworld/target/App.scala-1.0-SNAPSHOT.jar
+
+
