@@ -1,40 +1,9 @@
-Make sure you have at least Scala 2.10.3
+I recommend IntelliJ IDEA for building and compiling Scala programs/jars. It is far easier.
 
-https://blogs.oracle.com/arungupta/entry/scala_and_maven_getting_started
+In IntelliJ, install the Scala plugin, create a new Scala project, then add Framework support (maven) by right clicking the project.
 
-mvn archetype:generate \
-      -DarchetypeGroupId=org.scala-tools.archetypes \
-      -DarchetypeArtifactId=scala-archetype-simple  \
-      -DremoteRepositories=http://scala-tools.org/repo-releases \
-      -DgroupId=org.glassfish.samples \
-      -DartifactId=scala-helloworld \
-      -Dversion=1.0-SNAPSHOT
+Edit your POM file to match the one in this repository. (Thanks Joel Miller for the POM file)
 
-Add this to pom.xml file:
-<configuration>
-  <launchers>
-    <launcher>
-      <id>sample</id>
-      <mainClass>org.glassfish.samples.App</mainClass>
-      <args>
-        <arg>${basedir}</arg>
-      </args>
-    </launcher>
-  </launchers>
-</configuration>
+All you have to do is edit the POM <groupID> and <artifactID> to match your project name/package name.
 
-Also add this to your pom.xml
-
-http://blog.cloudera.com/blog/2014/04/how-to-run-a-simple-apache-spark-app-in-cdh-5/
-
-Make sure you edit <groupId>org.scalatest</groupId> to have the following:
-<artifactId>scalatest_2.10</artifactId>
-<version>2.2.3</version>
-
-$ mvn package
-
-/usr/local/spark (your spark directory)/bin
-
-$ ./spark-submit --class App --master local ~/Documents/projects/scala-helloworld/target/App.scala-1.0-SNAPSHOT.jar
-
-
+Enjoy!
